@@ -28,9 +28,9 @@ return libraryName;
 }
 
 function checkoutBook(libraryName, bookTitle, bookGenre) {
-  var name = libraryName.name;  
-  //get to the genre without doing the if statement
-    
+  name = libraryName.name;  
+  
+  if (bookGenre === "fantasy") {
     for (var i = 0; i < libraryName.shelves.fantasy.length; i++) {
       var book = libraryName.shelves.fantasy[i]
       var title = book.title;
@@ -40,27 +40,27 @@ function checkoutBook(libraryName, bookTitle, bookGenre) {
       }
     } console.log (libraryName); 
 
-  // } else if (bookGenre === "fiction") {
-  //   for (var i = 0; i < libraryName.shelves.fiction.length; i++) {
-  //     var book = libraryName.shelves.fiction[i]
-  //     var title = book.title;
-  //     if (title === bookTitle) {
-  //       libraryName.shelves.fiction.splice(i, 1);
-  //       return `You have now checked out ${bookTitle} from the ${name}.`;
-  //     }  
-  //   } console.log (libraryName); 
+  } else if (bookGenre === "fiction") {
+    for (var i = 0; i < libraryName.shelves.fiction.length; i++) {
+      var book = libraryName.shelves.fiction[i]
+      var title = book.title;
+      if (title === bookTitle) {
+        libraryName.shelves.fiction.splice(i, 1);
+        return `You have now checked out ${bookTitle} from the ${name}.`;
+      }  
+    } console.log (libraryName); 
 
-  // } else if (bookGenre === "nonFiction") {
-  //   for (var i = 0; i < libraryName.shelves.nonFiction.length; i++) {
-  //     var book = libraryName.shelves.nonFiction[i]
-  //     var title = book.title
-  //     if (title === bookTitle) {
-  //       libraryName.shelves.nonFiction.splice(i, 1);
-  //       return `You have now checked out ${bookTitle} from the ${name}.`;
-  //     }
-  //   } console.log (libraryName); 
+  } else if (bookGenre === "nonFiction") {
+    for (var i = 0; i < libraryName.shelves.nonFiction.length; i++) {
+      var book = libraryName.shelves.nonFiction[i]
+      var title = book.title
+      if (title === bookTitle) {
+        libraryName.shelves.nonFiction.splice(i, 1);
+        return `You have now checked out ${bookTitle} from the ${name}.`;
+      }
+    } console.log (libraryName); 
   
-  // } 
+  } 
 
 }
   
